@@ -1,0 +1,210 @@
+*{
+  font-family: "Helvetica";
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 30%;
+  width: 100%;
+  display: block;
+	border-bottom: 1px solid #333;
+
+}
+
+header .heading{
+  display: block;
+  float: left;
+  margin-left: 2em;
+
+}
+
+header .heading a{
+	font-family: "Droid serif", serif;
+	text-decoration: none;
+	color: #333;
+}
+
+header .heading p{
+	color: #666;
+}
+
+header .account{
+  font-size: 10pt;
+  float: right;
+  display: block;
+	background: #FF9696;
+	margin-right: 2em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+}
+
+header .account ul
+{
+  text-align: center;
+  vertical-align: top;
+
+}
+
+header .account ul li{
+  vertical-align: top;
+  float: left;
+  margin-right: 2em;
+	list-style: none;
+}
+
+header .account ul li .login_form_wrapper
+{
+  display: none;
+  position: absolute;
+  top: 2.8em;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin-left: -2.5em;
+  background: salmon;
+  line-height: 2em;
+  box-shadow: 0 0 4px 2px rgba(0,0,0,0.1);
+}
+
+header .account ul li .login_form_wrapper input[type="text"],
+header .account ul li .login_form_wrapper input[type="password"]
+{
+  padding: 5px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+header .account ul li .login_form_wrapper input[type="text"]:focus,
+header .account ul li .login_form_wrapper input[type="password"]:focus
+{
+  border: solid 1px #707070;
+  box-shadow: 0 0 2px 1px #969696;
+}
+
+header .account ul li a{
+	text-decoration: none;
+	color: #666;
+
+}
+
+header .account ul li a:hover{
+	border-bottom: 2px solid #666;
+}
+
+
+
+nav{
+  float: left;
+  clear: both;
+  display: block;
+  top: 20%;
+ 	padding-left: 4%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+	height: 50%;
+}
+
+nav h2{
+	font-size: 12pt;
+	letter-spacing: 2px;
+	font-family: 'Droid serif';
+	color: #666;
+}
+
+nav ul{
+  list-style: none;
+  line-height: 2em;
+	margin-right: 1em;
+}
+
+nav ul li::before
+{
+  content:">>";
+  color: salmon;
+  font-size: 10pt;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 1em;
+  }
+
+nav ul li a{
+  text-decoration: none;
+  color: salmon;
+}
+
+.wrapper{
+  float: left;
+  width: 70%;
+  margin-left: 10%;
+}
+
+.wrapper .content{
+  margin: 0 auto;
+}
+
+.wrapper .content h2{
+	letter-spacing: 2px;
+	color: #FF5B5B;
+	margin-left: -5em;
+}
+
+
+.wrapper .content h3.product_name {
+	color: #333;
+}
+
+.wrapper .content .price
+{
+	color: salmon;
+}
+
+.product_form
+{
+  width: 500px;
+  margin-bottom: 5em;
+}
+
+.product_form label
+{
+  display: inline-block;
+  width: 220px;
+}
+
+.product_form input[type="text"]
+{
+  margin: 1em;
+
+}
+
+.product_item
+{
+	width: 250px;
+	height: 250px;
+	display: block;
+	float: left;
+	border: 1px solid rgba(0,0,0,0.1);
+	margin-right: 3%;
+	padding-left: 1em;
+  margin-bottom: 2em;
+}
+
+.product_item img{
+	width: 150px;
+	height: 150px;
+	position: relative;
+	margin-left: 20%;
+}
+
+footer{
+  height: 10%;
+  clear: both;
+  position: relative;
+  margin-top: -3em;
+}

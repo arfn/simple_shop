@@ -1,15 +1,26 @@
-<?php include 'src/header.php';
+<?php include 'templates/header.php';
       error_reporting(-1);
  ?>
 <?php include 'config/database.php';?>
-<?php include 'config/model.php';?>
+<?php include 'config/model.php';
+	$model = new Model();
+	$product_array = $model->show_all();
 
-<div class="wrapper">
-  <?php
-  $con = new Database();
-  $model = new Model();
-  var_dump($model->show_all());
-  ?>
+?>
+
+
+<div class="content">
+  <h2>Special Product</h2>
+  <ul>
+<?php foreach($product_array as $product){
+   echo  "<li class=\"product_item\">";
+				echo "<h3 class='product_name'>" . $product['product_name'] . "</h3>";
+	 			echo "<img src='uploads/" . $product['product_image'] . "'/>";
+				echo "<div class='price'>Price : <b>$" . $product['product_price'] . '</b></div>';
+   echo "</li>";
+}
+?>
+  </ul>
 </div>
 
-<?php include 'src/footer.php'?>
+<?php include 'templates/footer.php'?>
