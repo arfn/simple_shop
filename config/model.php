@@ -2,12 +2,22 @@
 
     class Model extends DatabaseConnection
     {
+
         public function show_all()
         {
           $sql = $this->dbh->prepare("SELECT * FROM product ORDER BY product_id DESC");
           $sql->execute();
           $result = $sql->fetchAll();
           return  $result;
+        }
+
+        //Show only one product
+        public function show($product_id)
+        {
+          $sql = $this->dbh->prepare("SELECT * FROM product WHERE product_id=?");
+          $sql->bindValue(1, $product_id, PDO::PARAM_INT);
+          $sql->execute();
+          return $sql->fetch(PDO::FETCH_ASSOC);
         }
 
         public function insert_product($data = array())
