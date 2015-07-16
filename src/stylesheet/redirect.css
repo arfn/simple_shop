@@ -1,0 +1,11 @@
+.notice_redirect
+{
+  width: 30%;
+  padding: 7em;
+  background: #eaeaea;
+  text-align: center;
+  margin: 0 auto;
+  font-family: Arial;
+  border: 1px solid rgba(0,0,0,0.05);
+  color: #666;
+}

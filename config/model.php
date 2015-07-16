@@ -31,9 +31,29 @@
           $column = implode(", ", array_keys($data));
           $values = implode(", ", array_map("add_quote", array_values($data)));
           $sql = $this->dbh->prepare("INSERT INTO product ($column) VALUES ($values);");
-          $sql->execute();
-          var_dump($column);
-          var_dump($values);
+
+          if ($sql->execute())
+          {
+            echo "<div class='notice_redirect'><p>Successfuly doing insert</p></div>";
+          }
+          else {
+            echo "<div class='notice_redirect'><p>An error occured while doing insert</p></div>";
+          }
+        }
+
+        public function update_product($data)
+        {
+          $sql = $this->dbh->prepare("UPDATE product SET product_name='".$data['product_name']."' WHERE product_id=".$data['product_id']);
+
+          if ($sql->execute())
+          {
+            echo "<div class='notice_redirect'><p>Successfuly update $data[product_name]</p></div>";
+            return true;
+          }
+          else {
+            echo "<div class='notice_redirect'><p>An error occured during update</p></div>";
+            return false;
+          }
         }
 
         public function login($usr, $pwd)

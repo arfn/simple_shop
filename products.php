@@ -12,7 +12,8 @@
   if(isset($_GET['product_id']))
   {
     //TODO sanitize this $_GET
-    $row = $model->show($_GET['product_id']);
+    $product_id = htmlspecialchars($_GET['product_id']);
+    $row = $model->show($product_id);
 
     if(!empty($row))
     {
@@ -26,6 +27,9 @@
   </div>
 
   <div class="side_content">
+    <?php if(isset($_SESSION['username']) && $_SESSION['username'] == 'arfn'){ ?>
+      <a href="kitchen/product_edit.php?product_id=<?= $product_id ?>">Change</a>
+    <?php } ?>
     <h5 class="price">$ <?= $row['product_price']?></h5>
     <span class="product_stok">Stok : <?php echo $row['product_quantity']?></span>
     <div class="add_to_cart_button">
