@@ -1,4 +1,7 @@
-<?php include '../templates/header.php'; ?>
+<?php 
+include '../config/config.php';
+include(HEADER);
+?>
 
 <div class="content">
   <h2>Upload a new product</h2>

@@ -1,7 +1,6 @@
 <?php
     error_reporting(-1);
-    include '../config/database.php';
-    include '../config/model.php';
+    include(MODEL_PATH . 'model.php');
     $model = new Model();
 
     $target_dir = "/home/arfn/phpshit/shop/uploads/";

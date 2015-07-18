@@ -1,11 +1,11 @@
-<?php include 'templates/header.php';
+<?php include 'config/config.php';
       error_reporting(-1);
  ?>
-<?php include 'config/database.php';?>
-<?php include 'config/model.php';
+<?php 
+  include(MODEL_PATH . 'model.php');
+  include(HEADER);
 	$model = new Model();
 	$product_array = $model->show_all();
-
 ?>
 
 
@@ -23,4 +23,5 @@
   </ul>
 </div>
 
-<?php include 'templates/footer.php'?>
+<?php include(FOOTER);?>
+;

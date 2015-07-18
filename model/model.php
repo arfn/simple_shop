@@ -1,4 +1,5 @@
 <?php
+    include(CONFIG_PATH . 'database.php');
 
     class Model extends DatabaseConnection
     {

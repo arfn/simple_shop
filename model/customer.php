@@ -1,5 +1,5 @@
 <?php 
-include '../config/database.php';
+    include(CONFIG_PATH . 'database.php');
 
 class Customer_Model extends DatabaseConnection
 {

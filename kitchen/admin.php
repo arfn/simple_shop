@@ -1,5 +1,6 @@
-<?php include '../templates/header.php';
-      error_reporting(-1);
+<?php include '../config/config.php';
+      include(HEADER);
+      include(MODEL_PATH . 'model.php');
  ?>
 
   <?php if(isset($_SESSION['username'])){
@@ -9,8 +10,7 @@
 	}
 	?>
 
-<?php include '../config/database.php';?>
-<?php include '../config/model.php';
+<?php
 	$model = new Model();
 ?>
 

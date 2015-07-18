@@ -1,8 +1,8 @@
-<?php include 'templates/header.php';
-      error_reporting(-1);
- ?>
-<?php include 'config/database.php';?>
-<?php include 'config/model.php';
+<?php 
+  error_reporting(-1);
+  include 'config/config.php';
+  include(MODEL_PATH . 'model.php');
+  include(HEADER);
 	$model = new Model();
 	$product_array = $model->show_all();
 ?>
@@ -50,4 +50,4 @@
 ?>
 
 
-<?php include 'templates/footer.php'?>
+<?php include(FOOTER)?>

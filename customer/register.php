@@ -1,4 +1,5 @@
-<?php include '../model/customer.php'; 
+<?php include '../config/config.php';
+	include(MODEL_PATH . 'customer.php');
 	$model = new Customer_Model();
 ?>
 <?php 
@@ -23,7 +24,7 @@
 <html>
 <head>
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="../src/stylesheet/customer.css">
+	<link rel="stylesheet" type="text/css" href="/shop/src/stylesheet/customer.css">
 </head>
 <body>
 	<div class="register_form_wrapper">

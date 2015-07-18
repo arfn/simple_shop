@@ -5,14 +5,13 @@ if(isset($_GET['product_id']))
 {
 ?>
 
-<?php include '../templates/header.php';
-      error_reporting(-1);
- ?>
-<?php include '../config/database.php';?>
-<?php include '../config/model.php';
-	$model = new Model();
-
-    $row = $model->show(htmlspecialchars($_GET['product_id']));
+<?php 
+include '../config/config.php';
+include(HEADER);
+error_reporting(-1);
+include(MODEL_PATH . 'model.php');
+$model = new Model();
+$row = $model->show(htmlspecialchars($_GET['product_id']));
 ?>
 
 <div class="content">
@@ -44,7 +43,7 @@ if(isset($_GET['product_id']))
     <input type="submit" name="product_update_submit" value="Update">
   </form>
 </div>
-<?php include '../templates/footer.php'?>
+<?php include(FOOTER);?>
 <?php }
   else {
     header('HTTP/1.0 401 Unauthorized');
