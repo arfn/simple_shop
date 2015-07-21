@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +35,7 @@
           </<div>
           </div>
         </li>
-        <li><a href="#">REGISTER</a></li>
+        <li><a href="/shop/customer/register.php">REGISTER</a></li>
         <?php }?>
         <?php if(isset($_SESSION['username'])){?>
           <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . "/shop/templates/logout.php"?>">LOGOUT</a></li>

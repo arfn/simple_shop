@@ -38,4 +38,4 @@
 	<input type="submit" name="admin_login_submit" value="Log in">
 </form>
 
-<?php include '../templates/footer.php'?>
+<?php include(FOOTER);?>

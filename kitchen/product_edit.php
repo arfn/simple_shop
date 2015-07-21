@@ -1,12 +1,12 @@
 <?php
-
+include '../config/config.php';
 //TODO user validation
 if(isset($_GET['product_id']))
 {
 ?>
 
 <?php 
-include '../config/config.php';
+
 include(HEADER);
 error_reporting(-1);
 include(MODEL_PATH . 'model.php');
