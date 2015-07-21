@@ -4,7 +4,7 @@
 ?>
 <?php 
 
-	//TODO password hashing
+
 	if(isset($_POST['customer_submit']))
 	{
 		$args = array(

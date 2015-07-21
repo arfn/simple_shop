@@ -44,7 +44,12 @@
 
         public function update_product($data)
         {
-          $sql = $this->dbh->prepare("UPDATE product SET product_name='".$data['product_name']."' WHERE product_id=".$data['product_id']);
+          $sql = $this->dbh->prepare("UPDATE product SET product_name='".$data['product_name']."', ".
+                                      "product_desc='".$data['product_desc']."', ".
+                                      "product_price='".$data['product_price']."', ".
+                                      "product_quantity='".$data['product_quantity']."', ".
+                                      "product_category='".$data['product_category'].
+                                       "' WHERE product_id=".$data['product_id']);
 
           if ($sql->execute())
           {

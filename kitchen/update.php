@@ -9,6 +9,7 @@
   <body>
     <?php
         error_reporting(-1);
+        include('../config/config.php');
         include(MODEL_PATH . 'model.php');
         $model = new Model();
 
