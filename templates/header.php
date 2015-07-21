@@ -28,7 +28,7 @@ session_start();
 
     <div class="account">
       <ul>
-        <?php if(!isset($_SESSION['username'])){?>
+        <?php if(!isset($_SESSION['cs_username'])){?>
         <li id="login"><a href="#" onclick="loginToggle()">LOGIN</a>
           <div class="login_form_wrapper">
             <?php include "login_form.php"?>
@@ -37,7 +37,7 @@ session_start();
         </li>
         <li><a href="/shop/customer/register.php">REGISTER</a></li>
         <?php }?>
-        <?php if(isset($_SESSION['username'])){?>
+        <?php if(isset($_SESSION['username']) || isset($_SESSION['cs_username'])){?>
           <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . "/shop/templates/logout.php"?>">LOGOUT</a></li>
         <?php } ?>
         <li><a href="#">CART</a></li>

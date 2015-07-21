@@ -1,6 +1,6 @@
 <?php 
     include(CONFIG_PATH . 'database.php');
-
+    session_start();
 class Customer_Model extends DatabaseConnection
 {
 	public function register_customer($data = array())
@@ -34,6 +34,24 @@ class Customer_Model extends DatabaseConnection
             var_dump($e->errorInfo);
           }
 	}
+
+  public function validate_login($username, $password)
+  {
+    //TODO Flash message
+    $sql = $this->dbh->prepare("SELECT * FROM customer WHERE customer_username=:usr");
+    $sql->bindParam(':usr', $username);
+    $sql->execute();
+    $row = $sql->fetch(PDO::FETCH_ASSOC);
+    if($row && password_verify($password, $row['customer_password']))
+    {
+      $_SESSION['cs_username'] = $row['customer_username'];
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
 }
 
  ?>
