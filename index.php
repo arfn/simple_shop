@@ -4,10 +4,12 @@
 <?php 
   include(MODEL_PATH . 'model.php');
   include(HEADER);
+  include(CONFIG_PATH . 'flash.php');
 	$model = new Model();
 	$product_array = $model->show_all();
 ?>
 
+<?php flash("notice");?>
 
 <div class="content">
   <h2>Special Product</h2>
@@ -22,6 +24,5 @@
 ?>
   </ul>
 </div>
-
 <?php include(FOOTER);?>
-;
+;/

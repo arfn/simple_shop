@@ -11,6 +11,7 @@
 	//TODO remember me
 	include '../config/config.php';
 	include MODEL_PATH . "customer.php";
+	include CONFIG_PATH . 'flash.php';
 	$customer = new Customer_Model;
 	if (isset($_POST['login_submit'])) {
 		$username = htmlspecialchars($_POST['login_username']);
@@ -18,12 +19,14 @@
 
 		if($customer->validate_login($username, $password))
 		{
-			echo "<div class=notice_redirect>Login Successfuly</div>";
+			flash("notice", "Succesfuly login as ".$username);
+			echo '<div class="notice_redirect">Login Successfull, the page will redirect</div>';
 			header("Refresh:3;url=/shop/index.php");
 		}
 		else
 		{
-			echo "<div class=notice_redirect>Username or password incorrect</div>";
+			echo '<div class="notice_redirect">Login failed, the page will redirect</div>';
+			flash("notice", "Login failed", "error");
 			header("Refresh:3;url=/shop/index.php");
 		}
 	}

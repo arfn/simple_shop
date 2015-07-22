@@ -1,6 +1,7 @@
 <?php include '../config/config.php';
       include(HEADER);
       include(MODEL_PATH . 'model.php');
+      include(CONFIG_PATH . 'flash.php');
  ?>
 
   <?php if(isset($_SESSION['username'])){
@@ -12,6 +13,7 @@
 
 <?php
 	$model = new Model();
+	flash("notice");
 ?>
 
 <?php
@@ -22,9 +24,11 @@
 		$password = htmlspecialchars($_POST['admin_login_password']);
 
 		if($model->login($username, $password)){
+			flash("notice", "Login succesfuly as " . $username);
 			header("Location:"."http://".$_SERVER['SERVER_NAME']."/shop");
 		}
 		else{
+			flash("notice", "Login failed", "error");
 			header("Location: ".$_SERVER['REQUEST_URI']);
 		}
 	}

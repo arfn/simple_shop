@@ -11,6 +11,7 @@
         error_reporting(-1);
         include('../config/config.php');
         include(MODEL_PATH . 'model.php');
+        include(CONFIG_PATH . 'flash.php');
         $model = new Model();
 
         $args = array(
@@ -28,9 +29,11 @@
         if(isset($_POST['product_update_submit'])){
             if($model->update_product($input))
             {
+              flash("notice", "Product update success.");
               header("refresh:3;url=../index.php");
             }
             else {
+              flash("notice", "Product update failed", "error");
               header("Location: product_edit.php?product_id=$input[product_id]");
             }
         }

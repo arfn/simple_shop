@@ -5,7 +5,7 @@
 <?php 
 
 
-	if(isset($_POST['customer_submit']))
+	if(isset($_POST['customer_submit']) && $_POST['customer_password'] == $_POST['customer_password_confirmation'])
 	{
 		$args = array(
 			'customer_name' => FILTER_SANITIZE_SPECIAL_CHARS,
@@ -40,10 +40,10 @@
 			<input type="email" name="customer_email" required="required">
 			<br>
 			<label for="customer_password">Password</label>
-			<input type="password" name="customer_password" required="required">
+			<input type="password" name="customer_password" id="usr_password" required="required">
 			<br>
 			<label for="customer_password_confirmation">Password Confirmation</label>
-			<input type="password" name="customer_password_confirmation" required="required">
+			<input type="password" name="customer_password_confirmation" id="usr_password_c	" required="required">
 			<br>
 			<input type="submit" value="Register" name="customer_submit">
 		</form>

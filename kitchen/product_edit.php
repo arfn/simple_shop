@@ -10,10 +10,12 @@ if(isset($_GET['product_id']))
 include(HEADER);
 error_reporting(-1);
 include(MODEL_PATH . 'model.php');
+include(CONFIG_PATH . 'flash.php');
 $model = new Model();
 $row = $model->show(htmlspecialchars($_GET['product_id']));
 ?>
 
+<?php flash("notice");?>
 <div class="content">
   <h2>Edit Product</h2>
   <form class="product_form" action="update.php" method="post" enctype="multipart/form-data">
